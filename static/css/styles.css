@@ -1,7 +1,7 @@
 /* styles.css */
 .sidebar {
     min-height: 100vh;
-    background: #48c87d;
+    background: #4882c8;
     transition: all 0.3s;
 }
 
@@ -64,4 +64,67 @@
 
 .quick-actions .btn:hover {
     transform: scale(1.05);
+}
+
+/* Nuevos estilos para el menú desplegable lateral */
+.dropdown-side {
+    position: relative;
+}
+
+.dropdown-side .nav-link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dropdown-side .nav-link:hover {
+    background: #34495e;
+    transform: translateX(5px);
+}
+
+.side-menu {
+    display: none;
+    position: absolute;
+    left: 100%;
+    top: 0;
+    min-width: 200px;
+    background: #4882c8;
+    border: 1px solid rgba(255,255,255,.15);
+    border-radius: 5px;
+    padding: 0.5rem 0;
+    z-index: 1000;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-side:hover .side-menu {
+    display: block;
+}
+
+.side-item {
+    display: block;
+    padding: 12px 20px;
+    color: #ecf0f1;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.side-item:hover {
+    background: #34495e;
+    color: white;
+    text-decoration: none;
+    transform: translateX(5px);
+}
+
+.dropdown-divider {
+    border-top: 1px solid rgba(255,255,255,.15);
+    margin: 0.5rem 0;
+}
+
+/* Animación suave para el ícono de flecha */
+.dropdown-side .fa-chevron-right {
+    transition: transform 0.3s;
+}
+
+.dropdown-side:hover .fa-chevron-right {
+    transform: rotate(90deg);
 }

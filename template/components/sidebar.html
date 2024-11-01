@@ -3,9 +3,7 @@
 <!-- Sidebar -->
 <div class="col-md-3 col-lg-2 px-0 sidebar">
   <div class="text-center py-1">
-    <div
-      class="d-flex flex-row justify-content-center align-items-center text-center"
-    >
+    <div class="d-flex flex-row justify-content-center align-items-center text-center">
       <img
         src="{% static 'img/logo.webp' %}"
         alt="Logo"
@@ -20,20 +18,30 @@
     <a class="nav-link active" href="{% url 'core:home'%}">
       <i class="fas fa-home me-2"></i> Dashboard
     </a>
-    <a class="nav-link" href="#"
-      ><i class="fas fa-calendar-alt me-2"></i> Citas</a
-    >
-    <a class="nav-link" href="#"
-      ><i class="fas fa-user-injured me-2"></i> Pacientes</a
-    >
-    <a class="nav-link" href="#"
-      ><i class="fas fa-stethoscope me-2"></i> Consultas</a
-    >
-    <a class="nav-link" href="#"
-      ><i class="fas fa-procedures me-2"></i> Atencion</a
-    >
-    <a class="nav-link" href="#"
-      ><i class="fas fa-cogs me-2"></i> Mantenimiento</a
-    >
+    <a class="nav-link" href="#">
+      <i class="fas fa-calendar-alt me-2"></i> Citas
+    </a>
+    <a class="nav-link" href="{% url 'core:patient_list' %}">
+      <i class="fas fa-user-injured me-2"></i> Pacientes
+    </a>
+    <a class="nav-link" href="#">
+      <i class="fas fa-stethoscope me-2"></i> Consultas
+    </a>
+    <a class="nav-link" href="#">
+      <i class="fas fa-procedures me-2"></i> Atencion
+    </a>
+    <div class="nav-item dropdown-side">
+      <a class="nav-link d-flex justify-content-between align-items-center" href="#" id="mantenimientoDropdown" role="button">
+        <span><i class="fas fa-cogs me-2"></i> Mantenimiento</span>
+        <i class="fas fa-chevron-right"></i>
+      </a>
+      <div class="side-menu">
+        <a class="side-item" href="{% url 'core:blood_type_list'%}"></i> Gestión Tipos de Sangre</a>
+        <a class="side-item" href="#"><i class="fas fa-clinic-medical me-2"></i> Especialidades</a>
+        <a class="side-item" href="#"><i class="fas fa-hospital me-2"></i> Consultorios</a>
+        <div class="dropdown-divider"></div>
+        <a class="side-item" href="#"><i class="fas fa-users-cog me-2"></i> Usuarios</a>
+      </div>
+    </div>
   </nav>
 </div>

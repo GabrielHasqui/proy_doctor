@@ -40,7 +40,7 @@ class PatientCreateView(CreateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data()
-        context['title1'] = 'Crear Paciente?'
+        context['title1'] = 'Registro de Pacientes'
         context['grabar'] = 'Grabar Paciente'
         context['back_url'] = self.success_url
         return context
@@ -67,7 +67,7 @@ class PatientUpdateView(UpdateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data()
-        context['grabar'] = 'Actualizar Proveedor'
+        context['grabar'] = 'Actualizar Paciente'
         context['back_url'] = self.success_url
         return context
     
