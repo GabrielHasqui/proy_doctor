@@ -1,0 +1,39 @@
+<!-- components/sidebar.html -->
+{% load static %}
+<!-- Sidebar -->
+<div class="col-md-3 col-lg-2 px-0 sidebar">
+  <div class="text-center py-1">
+    <div
+      class="d-flex flex-row justify-content-center align-items-center text-center"
+    >
+      <img
+        src="{% static 'img/logo.webp' %}"
+        alt="Logo"
+        class="mb-3 rounded-circle"
+        width="30px"
+      />
+      <h6>{{title1}}</h6>
+    </div>
+    <h5 class="text-white">{{title2}}</h5>
+  </div>
+  <nav class="nav flex-column mt-4">
+    <a class="nav-link active" href="#"
+      ><i class="fas fa-home me-2"></i> Dashboard</a
+    >
+    <a class="nav-link" href="#"
+      ><i class="fas fa-calendar-alt me-2"></i> Citas</a
+    >
+    <a class="nav-link" href="#"
+      ><i class="fas fa-user-injured me-2"></i> Pacientes</a
+    >
+    <a class="nav-link" href="#"
+      ><i class="fas fa-stethoscope me-2"></i> Consultas</a
+    >
+    <a class="nav-link" href="#"
+      ><i class="fas fa-procedures me-2"></i> Atencion</a
+    >
+    <a class="nav-link" href="#"
+      ><i class="fas fa-cogs me-2"></i> Mantenimiento</a
+    >
+  </nav>
+</div>

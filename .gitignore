@@ -1,0 +1,6 @@
+# ignorar el entorno 
+env/
+venv/
+conda/
+# ignorar los archivos de configuración
+.vscode/
