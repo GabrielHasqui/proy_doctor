@@ -12,7 +12,7 @@
       />
       <h6>{{title1}}</h6>
     </div>
-    <h5 class="text-white">{{title2}}</h5>
+    {% comment %} <h5 class="text-white">{{title2}}</h5> {% endcomment %}
   </div>
   <nav class="nav flex-column mt-4">
     <a class="nav-link active" href="{% url 'core:home'%}">
@@ -37,7 +37,7 @@
       </a>
       <div class="side-menu">
         <a class="side-item" href="{% url 'core:blood_type_list'%}"></i> Gestión Tipos de Sangre</a>
-        <a class="side-item" href="#"><i class="fas fa-clinic-medical me-2"></i> Especialidades</a>
+        <a class="side-item" href="{% url 'core:specialty_list'%}"></i> Gestión Especialidad</a>
         <a class="side-item" href="#"><i class="fas fa-hospital me-2"></i> Consultorios</a>
         <div class="dropdown-divider"></div>
         <a class="side-item" href="#"><i class="fas fa-users-cog me-2"></i> Usuarios</a>

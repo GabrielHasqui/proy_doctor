@@ -10,9 +10,9 @@ from doctor.utils import save_audit
 class BloodTypeListView(ListView):
     template_name = "core/blood_type/list.html"
     model = TipoSangre
-    context_object_name = 'blood_types'
+    context_object_name = 'Tipos_Sangre'
     query = None
-    paginate_by = 2
+    paginate_by = 5
     
     def get_queryset(self):
         self.query = Q()
@@ -70,7 +70,7 @@ class BloodTypeUpdateView(UpdateView):
     def form_valid(self, form):
         response = super().form_valid(form)
         blood_type = self.object
-        save_audit(self.request, blood_type, action='U')
+        save_audit(self.request, blood_type, action='M')
         messages.success(self.request, f"Éxito al actualizar el tipo de sangre {blood_type.tipo}.")
         return response
     
@@ -87,13 +87,13 @@ class BloodTypeDeleteView(DeleteView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data()
         context['title1'] = 'Eliminar Tipo de Sangre'
-        context['grabar'] = 'Eliminar Tipo de Sangre'
+        context['grabar'] = f'¿Está seguro de eliminar el tipo de sangre {self.object.tipo}?'
         context['back_url'] = self.success_url
         return context
     
     def delete(self, request, *args, **kwargs):
         blood_type = self.get_object()
-        save_audit(request, blood_type, action='D')
+        save_audit(request, blood_type, action='E')
         messages.success(request, f"Éxito al eliminar el tipo de sangre {blood_type.nombre}.")
         return super().delete(request, *args, **kwargs)
 
