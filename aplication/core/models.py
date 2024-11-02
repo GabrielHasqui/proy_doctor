@@ -230,6 +230,12 @@ class Empleado(models.Model):
     foto = models.ImageField(upload_to='empleados/', verbose_name="Foto del Empleado", null=True, blank=True)
     activo = models.BooleanField(default=True,verbose_name="Activo")
     
+    def get_image(self):
+        if self.foto:
+            return self.foto.url
+        else:
+            return '/static/img/usuario_anonimo.png'
+    
     @property
     def nombre_completo(self):
         return f"{self.apellidos} {self.nombres}"

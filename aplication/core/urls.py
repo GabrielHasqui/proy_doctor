@@ -3,6 +3,7 @@ from aplication.core.views.home import *
 from aplication.core.views.patient import *
 from aplication.core.views.blood_type import *
 from aplication.core.views.specialty import *
+from aplication.core.views.employees import *
  
 app_name='core' # define un espacio de nombre para la aplicacion
 urlpatterns = [
@@ -30,5 +31,9 @@ urlpatterns = [
   path('specialty_create/', SpecialtyCreateView.as_view(),name="specialty_create"),
   path('specialty_update/<int:pk>/', SpecialtyUpdateView.as_view(),name='specialty_update'),
   path('specialty_delete/<int:pk>/', SpecialtyDeleteView.as_view(),name='specialty_delete'),
-
+  # urls de empleados
+  path('employee_list/', EmployeeListView.as_view(),name="employee_list"),
+  path('employee_create/', EmployeeCreateView.as_view(),name="employee_create"),
+  path('employee_update/<int:pk>/', EmployeeUpdateView.as_view(),name='employee_update'),
+  path('employee_delete/<int:pk>/', EmployeeDeleteView.as_view(),name='employee_delete'),
 ]
