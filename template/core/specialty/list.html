@@ -78,6 +78,10 @@
                         </div>
                         <td>
                             <div class="action-buttons d-flex gap-2">
+                                <button class="btn btn-info btn-sm" title="Detalle Especialidad"
+                                onclick="verCategoriaExamen('{{ item.id }}')">
+                                <i class="fas fa-eye"></i>
+                                </button>
                                 <a href="{% url 'core:specialty_update' item.id %}" class="btn btn-info btn-sm text-white" title="Editar">
                                     <i class="fas fa-edit"></i>
                                 </a>
@@ -119,6 +123,8 @@
 <!-- Include Delete Confirmation Modal -->
 {% include 'includes/confirm_delete_modal.html' %}
 
+{% include 'core/specialty/include/specialty_detail_modal.html' %}
+
 <script>
     function confirmDelete(id, name, msg) {
         document.getElementById('modalMessage').innerText = `${msg} ${name}`;
@@ -134,6 +140,23 @@
         if (modalInstance) {
             modalInstance.hide();
         }
+    }
+
+    function verCategoriaExamen(id) {
+        fetch(`/specialty_detail/${id}/`)
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById('especialidad-id').textContent = data.id;
+            document.getElementById('especialidad-nombre').textContent = data.nombre;
+            document.getElementById('especialidad-descripcion').textContent = data.descripcion;
+            document.getElementById('especialidad-activo').textContent = data.activo ? 'Sí' : 'No';
+            const modal = new bootstrap.Modal(document.getElementById('especialidad_Modal'));
+            modal.show();
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('Ocurrió un error al cargar los datos de la categoría de examen');
+        })
     }
 </script>
  

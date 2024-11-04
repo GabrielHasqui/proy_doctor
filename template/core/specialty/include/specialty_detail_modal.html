@@ -1,0 +1,39 @@
+{% comment %} templates/core/specialty/include/specialty_detail_modal.html {% endcomment %}
+<div class="modal fade" id="especialidad_Modal" tabindex="-1" aria-labelledby="especialidad_ModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header bg-primary bg-opacity-75">
+                <h5 class="modal-title text-white fw-bold" id="especialidad_ModalLabel">
+                    <i class="fas fa-info-circle me-2"></i>Detalles de la Especialidad
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p><strong><i class="fas fa-id-card me-2"></i>ID:</strong> 
+                                   <span id="especialidad-id"></span></p>
+                                <p><strong><i class="fas fa-tag me-2"></i>Nombre:</strong> 
+                                   <span id="especialidad-nombre"></span></p>
+                                <p><strong><i class="fas fa-align-left me-2"></i>Descripción:</strong> 
+                                   <span id="especialidad-descripcion"></span></p>
+                            </div>
+                            <div class="col-md-6">
+                                <p><strong><i class="fas fa-check me-2"></i>Activo:</strong> 
+                                   <span id="especialidad-activo"></span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                    <i class="fas fa-times me-2"></i>Cerrar
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+  

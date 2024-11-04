@@ -8,6 +8,7 @@ from aplication.core.views.doctor import *
 from aplication.core.views.diagnosis import *
 from aplication.core.views.Category_Exam import *
 from aplication.core.views.Type_Category import *
+from aplication.core.views.audit import * 
 
 app_name = 'core'
 
@@ -34,6 +35,7 @@ urlpatterns = [
   path('specialty_create/', SpecialtyCreateView.as_view(), name="specialty_create"),
   path('specialty_update/<int:pk>/', SpecialtyUpdateView.as_view(), name='specialty_update'),
   path('specialty_delete/<int:pk>/', SpecialtyDeleteView.as_view(), name='specialty_delete'),
+  path('specialty_detail/<int:pk>/', SpecialtyDetailView.as_view(), name='specialty_detail'),
 
   # Employee URLs
   path('employee_list/', EmployeeListView.as_view(), name="employee_list"),
@@ -69,4 +71,9 @@ urlpatterns = [
   path('type_category_update/<int:pk>/', TypeCategoryUpdateView.as_view(), name='type_category_update'),
   path('type_category_delete/<int:pk>/', TypeCategoryDeleteView.as_view(), name='type_category_delete'),
   path('type_category_detail/<int:pk>/', TypeCategoryDetailView.as_view(), name='type_category_detail'),
+  
+  # Audit URLs
+  path('audit_list/', AuditUserListView.as_view(), name="audit_list"),
+  path('audit_detail/<int:pk>/', AuditUserDetailView.as_view(), name='audit_detail'),
+  
 ]

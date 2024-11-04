@@ -104,12 +104,12 @@ class SpecialtyDeleteView(DeleteView):
 class SpecialtyDetailView(DetailView):
     model = Especialidad
     
-    def get_context_data(self, request, **kwargs):
-        context = super().get_odject()
+    def get(self, request, *args, **kwargs):
+        context = self.get_object()
         data = {
             'id': context.id,
             'nombre': context.nombre,
             'descripcion': context.descripcion,
-            'estado': context.estado
+            'activo': context.activo
         }
         return JsonResponse(data)
