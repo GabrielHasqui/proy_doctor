@@ -23,6 +23,12 @@ El proyecto está organizado en varios módulos, cada uno con responsabilidades 
 - **doctor**: Contiene scripts y configuraciones específicas para la gestión de doctores.
 - **template/core**: Contiene las plantillas HTML para la interfaz de usuario, organizadas por funcionalidad.
 
+## Tecnologías Utilizadas
+
+- **Backend**: Django
+- **Frontend**: HTML, CSS, JavaScript
+- **Base de Datos**: PostgreSQL
+
 ## Instalación
 
 1. Clona el repositorio:
@@ -51,11 +57,10 @@ El proyecto está organizado en varios módulos, cada uno con responsabilidades 
 - Accede a la aplicación en tu navegador web en `http://localhost:8000`.
 - Utiliza el menú de navegación para acceder a las diferentes secciones de la aplicación, como la gestión de pacientes, doctores y citas médicas.
 
-
 ## Licencia
 
 Este proyecto está licenciado bajo la Licencia MIT. Consulta el archivo `LICENSE` para más detalles.
 
 ## Contacto
 
-Para más información, puedes contactar al equipo de desarrollo en [correo@ejemplo.com](mailto:correo@ejemplo.com).
+Para más información, puedes contactar al equipo de desarrollo en [correo@ejemplo.com](ghasquio@unemi.edu.ec).
