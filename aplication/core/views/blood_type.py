@@ -19,7 +19,6 @@ class BloodTypeListView(ListView):
         q1 = self.request.GET.get('q') # ver
         if q1 is not None: 
             self.query |= Q(tipo__icontains=q1) 
-            # self.query |= Q(cargo__icontains=q1)
             self.query |= Q(descripcion__icontains=q1)  
         return self.model.objects.filter(self.query).order_by('tipo')
     
@@ -104,7 +103,8 @@ class BloodTypeDetailView(DetailView):
     def get(self, request, *args, **kwargs):
         blood_type = self.get_object()
         data = {
-            'nombre': blood_type.nombre,
+            'id': blood_type.id,
+            'tipo': blood_type.tipo,
             'descripcion': blood_type.descripcion
         }
         return JsonResponse(data)

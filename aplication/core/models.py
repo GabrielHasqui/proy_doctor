@@ -3,7 +3,7 @@ from django.db import models
 from doctor.const import CIVIL_CHOICES, SEX_CHOICES
 from django.contrib.auth.models import User
 from doctor.utils import valida_cedula,phone_regex
-
+from django.utils import timezone
       
 """Modelo que representa los diferentes tipos de sangre.
 Se gestiona como un modelo separado para mantener flexibilidad
@@ -157,7 +157,7 @@ class Doctor(models.Model):
     # Código único del doctor, utilizado para identificarlo internamente en la clínica
     codigoUnicoDoctor = models.CharField(max_length=20, unique=True, verbose_name="Código Único del Doctor")
     # Relación con el modelo Especialidad, permite asociar una o varias especialidades al doctor
-    especialidad = models.ManyToManyField('Especialidad', verbose_name="Especialidades",related_name="especialidades")
+    especialidad = models.ManyToManyField('especialidad', verbose_name="Especialidades",related_name="especialidades")
     # Número de teléfono de contacto del doctor
     telefonos = models.CharField(max_length=20, verbose_name="Teléfonos")
     # Dirección de correo electrónico del doctor
@@ -175,10 +175,12 @@ class Doctor(models.Model):
     # Imagen que se utilizará en las recetas firmadas por el doctor
     imagen_receta = models.ImageField(upload_to='recetas/', verbose_name="Imagen para Recetas", null=True, blank=True)
     activo = models.BooleanField(default=True,verbose_name="Activo")
+    created_at = models.DateTimeField(default=timezone.now, verbose_name="Fecha de Creación")
     
     @property
     def nombre_completo(self):
         return f"{self.apellidos} {self.nombres}"
+
     
     def __str__(self):
         return f"{self.apellidos}"

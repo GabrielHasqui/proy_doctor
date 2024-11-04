@@ -36,8 +36,9 @@ class DoctorAdmin(admin.ModelAdmin):
     list_filter = ('especialidad',)
     
     def nombre_completo(self, obj):
-        return obj.nombre_completo()
+        return obj.nombre_completo  # Sin paréntesis
     nombre_completo.short_description = "Nombre Completo"
+
 
 
 # Registro de Cargo

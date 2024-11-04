@@ -115,12 +115,11 @@ class EmployeeDetailView(DetailView):
             'apellidos': self.object.apellidos,
             'cedula': self.object.cedula,
             'fecha_nacimiento': self.object.fecha_nacimiento,
-            'cargo': self.object.cargo,
+            'cargo': str(self.object.cargo),  # Convert cargo to string
             'sueldo': self.object.sueldo,
             'direccion': self.object.direccion,
             'latitud': self.object.latitud,
             'longitud': self.object.longitud,
-            'telefono': self.object.telefono,
             'foto': self.object.foto.url,
             'activo': self.object.activo,
         }

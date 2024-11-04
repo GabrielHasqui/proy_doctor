@@ -3,7 +3,12 @@
     min-height: 100vh;
     background: #064086;
     transition: all 0.3s;
-}
+    position: fixed; /* Añadido */
+    top: 0; /* Añadido */
+    left: 0; /* Añadido */
+    width: 250px; /* Ajusta el ancho según sea necesario */
+    z-index: 1000; /* Asegura que la barra lateral esté por encima del contenido */
+  }
 
 .sidebar .nav-link {
     color: #ecf0f1;
@@ -24,7 +29,8 @@
 
 .main-content {
     background: #f8f9fa;
-}
+    margin-left: 250px; /* Ajusta el margen para que el contenido no quede debajo de la barra lateral */
+  }
 
 .card {
     border: none;
