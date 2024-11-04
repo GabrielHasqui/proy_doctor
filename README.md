@@ -63,4 +63,4 @@ Este proyecto está licenciado bajo la Licencia MIT. Consulta el archivo `LICENS
 
 ## Contacto
 
-Para más información, puedes contactar al equipo de desarrollo en [correo@ejemplo.com](ghasquio@unemi.edu.ec).
+Para más información, puedes contactar al equipo de desarrollo en [ghasquio@unemi.edu.ec](mailto:correo@ejemplo.com).
