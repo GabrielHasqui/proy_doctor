@@ -91,8 +91,8 @@
                                     <td>{{item.horario_atencion}}</td>
                                     <td>{{item.telefonos}}</td>
                                     <td>
-                                        <span class="patient-status status-active"></span>
-                                        Activo
+                                        <span class="patient-status {% if item.activo %}status-active{% else %}status-inactive{% endif %}"></span>
+                                        {% if item.activo %}Activo{% else %}Inactivo{% endif %}
                                     </td>
                                     <td>
                                         <div class="action-buttons d-flex gap-2">

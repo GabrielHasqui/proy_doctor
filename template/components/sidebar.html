@@ -16,7 +16,7 @@
     <a class="nav-link text-white" href="{% url 'core:home'%}">
       <i class="fas fa-home me-2"></i> Dashboard
     </a>
-    <a class="nav-link text-white" href="#">
+    <a class="nav-link text-white" href="{% url 'attention:medical_appointment_list'%}">
       <i class="fas fa-calendar-alt me-2"></i> Citas
     </a>
     <a class="nav-link text-white" href="{% url 'core:patient_list' %}">
@@ -51,6 +51,7 @@
         <li><a class="dropdown-item" href="{% url 'core:type_category_list'%}">Gestión Tipo de Categoría</a></li>
         <li><a class="dropdown-item" href="{% url 'core:audit_list'%}">Auditoria</a></li>
         <li><a class="dropdown-item" href="{% url 'attention:attention_hours_list'%}">Gestion de Horarios</a></li>
+        <li><a class="dropdown-item" href="{% url 'attention:requested_exam_list'%}">Gestion de Examenes Solicitados</a></li>
       </ul>
     </div>
   </nav>

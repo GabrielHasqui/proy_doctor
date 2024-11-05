@@ -45,57 +45,47 @@
         <h2 class="text-center text-2xl font-bold text-blue-600 mb-4" style="font-family: Arial, sans-serif;">{{ title1 }}</h2>
         <div class="row g-0">
         <div class="col-md-6 mb-3 pr-1 pl-1">
-            <label for="{{ form.dia_semana.id_for_label }}" class="form-label fw-bold">{{ form.dia_semana.label }}</label>
-            {{ form.dia_semana }}
-            {% if form.dia_semana.errors %}
-                <div class="text-danger">{{ form.dia_semana.errors.0 }}</div>
+            <label for="{{ form.nombre_examen.id_for_label }}" class="form-label fw-bold">{{ form.nombre_examen.label }}</label>
+            {{ form.nombre_examen }}
+            {% if form.nombre_examen.errors %}
+                <div class="text-danger">{{ form.nombre_examen.errors.0 }}</div>
             {% endif %}
         </div>
         <div class="col-md-6 mb-3 pr-1 pl-1">
-            <label for="{{ form.hora_inicio.id_for_label }}" class="form-label fw-bold">{{ form.hora_inicio.label }}</label>
-            {{ form.hora_inicio }}
-            {% if form.hora_inicio.errors %}
-                <div class="text-danger">{{ form.hora_inicio.errors.0 }}</div>
+            <label for="{{ form.paciente.id_for_label }}" class="form-label fw-bold">{{ form.paciente.label }}</label>
+            {{ form.paciente }}
+            {% if form.paciente.errors %}
+                <div class="text-danger">{{ form.paciente.errors.0 }}</div>
             {% endif %}
         </div>
         <div class="col-md-6 mb-3 pr-1 pl-1">
-            <label for="{{ form.hora_fin.id_for_label }}" class="form-label fw-bold">{{ form.hora_fin.label }}</label>
-            {{ form.hora_fin }}
-            {% if form.hora_fin.errors %}
-                <div class="text-danger">{{ form.hora_fin.errors.0 }}</div>
+            <label for="{{ form.resultado.id_for_label }}" class="form-label fw-bold">{{ form.resultado.label }}</label>
+            {{ form.resultado }}
+            {% if form.resultado.errors %}
+                <div class="text-danger">{{ form.resultado.errors.0 }}</div>
             {% endif %}
         </div>
         <div class="col-md-6 mb-3 pr-1 pl-1">
-            <label for="{{ form.Intervalo_desde.id_for_label }}" class="form-label fw-bold">{{ form.Intervalo_desde.label }}</label>
-            {{ form.Intervalo_desde }}
-            {% if form.Intervalo_desde.errors %}
-                <div class="text-danger">{{ form.Intervalo_desde.errors.0 }}</div>
+            <label for="{{ form.comentario.id_for_label }}" class="form-label fw-bold">{{ form.comentario.label }}</label>
+            {{ form.comentario }}
+            {% if form.comentario.errors %}
+                <div class="text-danger">{{ form.comentario.errors.0 }}</div>
             {% endif %}
         </div>
         <div class="col-md-6 mb-3 pr-1 pl-1">
-            <label for="{{ form.Intervalo_hasta.id_for_label }}" class="form-label fw-bold">{{ form.Intervalo_hasta.label }}</label>
-            {{ form.Intervalo_hasta }}
-            {% if form.Intervalo_hasta.errors %}
-                <div class="text-danger">{{ form.Intervalo_hasta.errors.0 }}</div>
-            {% endif %}
-        </div>
-        <div class="col-md-6 mb-3 pr-1 pl-1">
-            <label for="{{ form.activo.id_for_label }}" class="form-label fw-bold">{{ form.activo.label }}</label>
-            {{ form.activo }}
-            {% if form.activo.errors %}
-                <div class="text-danger">{{ form.activo.errors.0 }}</div>
+            <label for="{{ form.estado.id_for_label }}" class="form-label fw-bold">{{ form.estado.label }}</label>
+            {{ form.estado }}
+            {% if form.estado.errors %}
+                <div class="text-danger">{{ form.estado.errors.0 }}</div>
             {% endif %}
         </div>
         <div class="d-flex justify-content-end mt-4">
             <button class="btn btn-outline-success me-2" type="submit">Registrar</button>
-            <a class="btn btn-outline-warning" href="{% url 'attention:attention_hours_list' %}">Cancelar</a>
+            <a class="btn btn-outline-warning" href="{% url 'attention:requested_exam_list' %}">Cancelar</a>
         </div>
         </div>
          </div>
         </form>
-         </div>
-        </div>
     </div>
-</div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+</body>
 {% endblock %}

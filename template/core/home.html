@@ -16,7 +16,7 @@
               </div>
               <div>
                 <h6 class="card-title mb-0">Citas Hoy</h6>
-                <h3 class="mb-0">24</h3>
+                <h3 class="mb-0"> {{can_cita}} </h3>
               </div>
             </div>
           </div>
@@ -59,12 +59,12 @@
             style="background: linear-gradient(45deg, #9b59b6, #8e44ad)"
           >
             <div class="card-body d-flex align-items-center">
-              <div class="icon-square bg-white text-purple">
-                <i class="fas fa-file-medical"></i>
+              <div class="icon-square bg-white text-primary" style="color: #8e44ad !important;">
+              <i class="fas fa-file-medical"></i>
               </div>
               <div>
-                <h6 class="card-title mb-0">Consultas</h6>
-                <h3 class="mb-0">156</h3>
+              <h6 class="card-title mb-0">Consultas</h6>
+              <h3 class="mb-0">156</h3>
               </div>
             </div>
           </div>
@@ -78,9 +78,10 @@
             <div class="card-body">
               <h5 class="card-title mb-4">Acciones Rápidas</h5>
               <div class="quick-actions d-flex flex-wrap gap-3">
-                <button class="btn btn-primary">
+                <a class="btn btn-primary" 
+                href="{% url 'attention:medical_appointment_create' %}">
                   <i class="fas fa-plus-circle me-2"></i>Nueva Cita
-                </button>
+                </a>
                 <a
                   class="btn btn-primary text-white d-inline-flex align-items-center text-lowercase"
                   href="{% url 'core:patient_create'%}"

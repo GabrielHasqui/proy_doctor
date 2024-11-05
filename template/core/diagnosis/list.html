@@ -63,6 +63,7 @@
                         <th>Codigo</th>
                         <th>Descripcion</th>
                         <th>Datos Adicionales</th>
+                        <th>Estado</th>
                         <th>Acciones</th>
                         </tr>
                     </thead>
@@ -73,6 +74,11 @@
                             <td>{{ item.descripcion }}</td>
                             <td>{{ item.datos_adicionales }}</td>
                             <td>
+                                <span class="patient-status {% if item.activo %}status-active{% else %}status-inactive{% endif %}"></span>
+                                {% if item.activo %}Activo{% else %}Inactivo{% endif %}
+                            </td>
+                            <td>
+                                
                                 <div class="action-buttons d-flex gap-2">
                                     <button class="btn btn-info btn-sm" title="Detalle Diagnóstico"
                                     onclick="verDiagnostico('{{ item.id }}')">

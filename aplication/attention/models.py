@@ -55,6 +55,12 @@ class CitaMedica(models.Model):
         verbose_name = "Cita Médica"
         verbose_name_plural = "Citas Médicas"
 
+# funcion para obtener el numero de citas de medicas
+    @staticmethod
+    def cantidad_citas():
+        return CitaMedica.objects.all().count()
+
+
 # Modelo que representa la cabecera de una atención médica.
 # Contiene la información general del paciente, diagnóstico, motivo de consulta y tratamiento.
 class Atencion(models.Model):

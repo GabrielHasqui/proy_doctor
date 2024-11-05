@@ -3,7 +3,6 @@ from aplication.core.models import (
     MarcaMedicamento, TipoSangre, Paciente, Especialidad, Doctor, Cargo, Empleado, TipoMedicamento, 
     Medicamento, Diagnostico, CategoriaExamen, TipoCategoria
 )
-
 # Registro de TipoSangre
 @admin.register(TipoSangre)
 class TipoSangreAdmin(admin.ModelAdmin):

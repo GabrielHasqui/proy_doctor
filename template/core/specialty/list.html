@@ -72,8 +72,8 @@
                         <td>{{ item.nombre }}</td>
                         <td>{{ item.descripcion|truncatewords:5 }}</td>
                         <td>
-                            <span class="patient-status status-active"></span>
-                            Activo
+                            <span class="patient-status {% if item.activo %}status-active{% else %}status-inactive{% endif %}"></span>
+                            {% if item.activo %}Activo{% else %}Inactivo{% endif %}
                         </td>
                         </div>
                         <td>
