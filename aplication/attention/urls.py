@@ -2,6 +2,7 @@ from django.urls import path
 from .views.Attention_hours import *
 from .views.medical_appointment import *
 from .views.Requested_exam import *
+from .views.Additional_services import *
 
 app_name = 'attention'  
 
@@ -27,4 +28,10 @@ urlpatterns = [
     path('requested_exam/delete/<int:pk>/', RequestedExamDeleteView.as_view(), name='requested_exam_delete'),
     path('requested_exam/detail/<int:pk>/', RequestedExamDetailView.as_view(), name='requested_exam_detail'),
     
+    # Additional Services
+    path('additional_services/', AdditionalServicesListView.as_view(), name='additional_services_list'),
+    path('additional_services/create/', AdditionalServicesCreateView.as_view(), name='additional_services_create'),
+    path('additional_services/update/<int:pk>/', AdditionalServicesUpdateView.as_view(), name='additional_services_update'),
+    path('additional_services/delete/<int:pk>/', AdditionalServicesDeleteView.as_view(), name='additional_services_delete'),
+    path('additional_services/detail/<int:pk>/', AdditionalServicesDetailView.as_view(), name='additional_services_detail'), 
 ]

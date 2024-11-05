@@ -6,7 +6,7 @@ class DoctorForm(ModelForm):
     class Meta:
         model = Doctor
         fields = [
-            'nombres', 'apellidos', 'cedula', 'fecha_nacimiento', 'direccion', 
+            'nombres', 'apellidos', 'cedula', 'fecha_nacimiento', 'direccion', "codigoUnicoDoctor",
             'latitud', 'longitud', 'especialidad', 'telefonos', 'email', 
             'horario_atencion', 'duracion_cita', 'curriculum', 'foto', 'activo',
             'imagen_receta', 'firmaDigital'
@@ -36,6 +36,10 @@ class DoctorForm(ModelForm):
             "estado": {"required": "El estado es requerido"},
             "imagen_receta": {"required": "La imagen de receta es requerida"},
             "firmaDigital": {"required": "La firma digital es requerida"},
+            "codigoUnicoDoctor": {
+                "required": "El código único es requerido",
+                "unique": "El código único ya existe"
+            }
         }
         
         widgets = {
@@ -120,5 +124,10 @@ class DoctorForm(ModelForm):
             "firmaDigital": forms.FileInput(attrs={
                 "id": "id_firmaDigital",
                 "class": "shadow-sm bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-principal dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light",
+            }),
+            "codigoUnicoDoctor": forms.TextInput(attrs={
+                "placeholder": "Ingrese código único",
+                "id": "id_codigoUnicoDoctor",
+                "class": "shadow-sm bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pr-12 dark:bg-principal dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light",
             }),
         }
