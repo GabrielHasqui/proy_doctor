@@ -1,3 +1,4 @@
+# Description: Formulario para el modelo HorarioAtencion
 from django.forms import ModelForm, ValidationError
 from django import forms
 from aplication.attention.models import HorarioAtencion
@@ -93,4 +94,5 @@ class AttentionHoursForm(ModelForm):
         Intervalo_hasta = self.cleaned_data.get('Intervalo_hasta')
         if not Intervalo_hasta:
             raise ValidationError("El campo intervalo hasta es requerido")
-        return Intervalo_hasta
+        return Intervalo_hasta 
+    
