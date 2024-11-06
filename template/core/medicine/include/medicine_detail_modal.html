@@ -1,0 +1,39 @@
+<!-- Modal Structure -->
+<div class="modal fade" id="medicineDetailModal" tabindex="-1" aria-labelledby="medicineDetailModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header bg-primary bg-opacity-75">
+                <h5 class="modal-title text-white fw-bold" id="medicineDetailModalLabel">
+                    <i class="fas fa-pills me-2"></i>Detalles del Medicamento
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p><strong><i class="fas fa-capsules me-2"></i>Nombre:</strong> <span id="medicineName"></span></p>
+                                <p><strong><i class="fas fa-tag me-2"></i>Tipo:</strong> <span id="medicineType"></span></p>
+                                <p><strong><i class="fas fa-industry me-2"></i>Marca:</strong> <span id="medicineBrand"></span></p>
+                                <p><strong><i class="fas fa-info-circle me-2"></i>Descripción:</strong> <span id="medicineDescription"></span></p>
+                            </div>
+                            <div class="col-md-6">
+                                <p><strong><i class="fas fa-vial me-2"></i>Concentración:</strong> <span id="medicineConcentration"></span></p>
+                                <p><strong><i class="fas fa-boxes me-2"></i>Cantidad:</strong> <span id="medicineQuantity"></span></p>
+                                <p><strong><i class="fas fa-dollar-sign me-2"></i>Precio:</strong> <span id="medicinePrice"></span></p>
+                                <p><strong><i class="fas fa-check me-2"></i>Comercial:</strong> <span id="medicineCommercial"></span></p>
+                                <p><strong><i class="fas fa-toggle-on me-2"></i>Activo:</strong> <span id="medicineActive"></span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                    <i class="fas fa-times me-2"></i>Cerrar
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

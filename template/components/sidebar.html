@@ -45,7 +45,7 @@
       <ul class="dropdown-menu dropdown-menu-dark">
         <li><a class="dropdown-item" href="{% url 'core:blood_type_list'%}">Gestión Tipos de Sangre</a></li>
         <li><a class="dropdown-item" href="{% url 'core:specialty_list'%}">Gestión Especialidad</a></li>
-        <li><a class="dropdown-item" href="#">Gestión Cargos</a></li>
+        <li><a class="dropdown-item" href="{% url 'core:post_list'%}">Gestión Cargos</a></li>
         <li><a class="dropdown-item" href="{% url 'core:employee_list'%}">Gestión Empledos</a></li>
         <li><a class="dropdown-item" href="{% url 'core:category_exam_list'%}">Gestión Categoría de Examen</a></li>
         <li><a class="dropdown-item" href="{% url 'core:type_category_list'%}">Gestión Tipo de Categoría</a></li>
@@ -53,6 +53,9 @@
         <li><a class="dropdown-item" href="{% url 'attention:attention_hours_list'%}">Gestion de Horarios</a></li>
         <li><a class="dropdown-item" href="{% url 'attention:requested_exam_list'%}">Gestion de Examenes Solicitados</a></li>
         <li><a class="dropdown-item" href="{% url 'attention:additional_services_list'%}">Gestion de Servicios Adicionales</a></li>
+        <li><a class="dropdown-item" href="{% url 'core:medication_type_list'%}">Gestion Tipo Medicamento</a></li>
+        <li><a class="dropdown-item" href="{% url 'core:medicine_brand_list'%}">Gestion Marca Medicamento</a></li>
+        <li><a class="dropdown-item" href="{% url 'core:medicine_list'%}">Gestion Medicamento</a></li>
       </ul>
     </div>
   </nav>

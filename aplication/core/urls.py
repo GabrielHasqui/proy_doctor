@@ -9,6 +9,10 @@ from aplication.core.views.diagnosis import *
 from aplication.core.views.Category_Exam import *
 from aplication.core.views.Type_Category import *
 from aplication.core.views.audit import * 
+from aplication.core.views.post import *
+from aplication.core.views.medication_Type import *
+from aplication.core.views.medicine_brand import *
+from aplication.core.views.medicine import *
 
 app_name = 'core'
 
@@ -71,6 +75,34 @@ urlpatterns = [
   path('type_category_update/<int:pk>/', TypeCategoryUpdateView.as_view(), name='type_category_update'),
   path('type_category_delete/<int:pk>/', TypeCategoryDeleteView.as_view(), name='type_category_delete'),
   path('type_category_detail/<int:pk>/', TypeCategoryDetailView.as_view(), name='type_category_detail'),
+  
+  # Post URLs
+  path('post_list/', PostListView.as_view(),name="post_list"),
+  path('post_create/', PostCreateView.as_view(),name="post_create"),
+  path('post_update/<int:pk>/', PostUpdateView.as_view(),name='post_update'),
+  path('post_delete/<int:pk>/', PostDeleteView.as_view(),name='post_delete'),
+  path('post_detail/<int:pk>/', PostDetailView.as_view(),name='post_detail'),
+  
+  # Medication Type URLs
+  path('medication_type_list/', Medication_TypeListView.as_view(), name="medication_type_list"),
+  path('medication_type_create/', Medication_TypeCreateView.as_view(), name="medication_type_create"),
+  path('medication_type_update/<int:pk>/', Medication_TypeUpdateView.as_view(), name='medication_type_update'),
+  path('medication_type_delete/<int:pk>/', Medication_TypeDeleteView.as_view(), name='medication_type_delete'),
+  path('medication_type_detail/<int:pk>/', Medication_TypeDetailView.as_view(), name='medication_type_detail'),
+  
+  # Medicine Brand URLs
+  path('medicine_brand_list/', Medicine_BrandListView.as_view(), name="medicine_brand_list"),
+  path('medicine_brand_create/', Medicine_BrandCreateView.as_view(), name="medicine_brand_create"),
+  path('medicine_brand_update/<int:pk>/', Medicine_BrandUpdateView.as_view(), name='medicine_brand_update'),
+  path('medicine_brand_delete/<int:pk>/', Medicine_BrandDeleteView.as_view(), name='medicine_brand_delete'),
+  path('medicine_brand_detail/<int:pk>/', Medicine_BrandDetailView.as_view(), name='medicine_brand_detail'),
+  
+  # Medicine URLs
+  path('medicine_list/', MedicineListView.as_view(), name="medicine_list"),
+  path('medicine_create/', MedicineCreateView.as_view(), name="medicine_create"),
+  path('medicine_update/<int:pk>/', MedicineUpdateView.as_view(), name='medicine_update'),
+  path('medicine_delete/<int:pk>/', MedicineDeleteView.as_view(), name='medicine_delete'),
+  path('medicine_detail/<int:pk>/', MedicineDetailView.as_view(), name='medicine_detail'),
   
   # Audit URLs
   path('audit_list/', AuditUserListView.as_view(), name="audit_list"),

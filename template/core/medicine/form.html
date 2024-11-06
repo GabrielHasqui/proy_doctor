@@ -1,0 +1,131 @@
+{% extends 'components/layout.html' %}
+{% load static %} 
+{% block content %}
+<script src="https://cdn.tailwindcss.com"></script>
+<body>
+<div class="container-fluid">
+    <!-- Paciente form -->
+    <!-- mensajes -->
+     {% if messages %}
+       <div id="notification-container" class="fixed top-0 right-0 m-3 z-50">
+        {% for message in messages %}
+             {% if message.tags == 'error' %}
+                <div id="alert-border-error" class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <div class="d-flex align-items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="28" height="28">
+                            <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zM11 14h2v2h-2v-2zm0-8h2v6h-2V6z"></path>
+                        </svg>
+                        <div class="ms-3">
+                            <span>{{ message }}</span> <br>
+                        </div>
+                        <div class="ms-3">
+                        <ul> 
+                         {% if form.errors %}
+                            {% for field, errors in form.errors.items %}
+                                
+                                    {% for error in errors %}
+                                        <li>{{ field }}: {{ error }}</li>
+                                    {% endfor %}
+                                
+                            {% endfor %}
+                          {% endif %}
+                          </ul>
+                         </div>
+                    </div>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            {% endif %}
+        {% endfor %}
+      </div>
+    {% endif %}
+    <!-- fin de mensajes -->
+<form method="post" enctype="multipart/form-data" class="py-4">
+    {% csrf_token %}
+    <div class="card shadow p-4">
+        <h2 class="text-center text-2xl font-bold text-blue-600 mb-4" style="font-family: Arial, sans-serif;">{{ title1 }}</h2>
+        <div class="row g-0">
+            <!-- Columna de la izquierda -->
+            <div class="col-lg-4">
+                <div id="imagenPreview" class="text-center mb-4">
+                    {% if form.imagen.value %}
+                    <img id="imagenSeleccionada" src="{{ form.imagen.value.url }}" class="rounded img-fluid" alt="Imagen del medicamento" style="width: 300px; height: 300px;">
+                    {% else %}
+                    <img id="imagenSeleccionada" src="{% static 'img/empty.png' %}" class="rounded img-fluid" alt="Imagen por defecto" style="width: 300px; height: 300px;">
+                    {% endif %}
+                </div>
+                <div class="text-center">
+                    <label for="{{ form.imagen.id_for_label }}" class="form-label fw-bold">{{ form.imagen.label }}</label>
+                    {{ form.imagen }}
+                </div>
+            </div>
+
+            <script>
+                document.getElementById("id_imagen").onchange = function(event) {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        document.getElementById("imagenSeleccionada").src = e.target.result;
+                    };
+                    reader.readAsDataURL(event.target.files[0]);
+                };
+            </script>
+
+            <!-- Columna de la derecha -->
+            <div class="col-lg-8 px-2">
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="{{ form.nombre.id_for_label }}" class="form-label fw-bold">{{ form.nombre.label }}</label>
+                        {{ form.nombre }}
+                        {{ form.nombre.errors }}
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="{{ form.tipo.id_for_label }}" class="form-label fw-bold">{{ form.tipo.label }}</label>
+                        {{ form.tipo }}
+                        {{ form.tipo.errors }}
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="{{ form.marca_medicamento.id_for_label }}" class="form-label fw-bold">{{ form.marca_medicamento.label }}</label>
+                        {{ form.marca_medicamento }}
+                        {{ form.marca_medicamento.errors }}
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="{{ form.descripcion.id_for_label }}" class="form-label fw-bold">{{ form.descripcion.label }}</label>
+                        {{ form.descripcion }}
+                        {{ form.descripcion.errors }}
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="{{ form.concentracion.id_for_label }}" class="form-label fw-bold">{{ form.concentracion.label }}</label>
+                        {{ form.concentracion }}
+                        {{ form.concentracion.errors }}
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="{{ form.cantidad.id_for_label }}" class="form-label fw-bold">{{ form.cantidad.label }}</label>
+                        {{ form.cantidad }}
+                        {{ form.cantidad.errors }}
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="{{ form.precio.id_for_label }}" class="form-label fw-bold">{{ form.precio.label }}</label>
+                        {{ form.precio }}
+                        {{ form.precio.errors }}
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="{{ form.comercial.id_for_label }}" class="form-label fw-bold">{{ form.comercial.label }}</label>
+                        {{ form.comercial }}
+                        {{ form.comercial.errors }}
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="{{ form.activo.id_for_label }}" class="form-label fw-bold">{{ form.activo.label }}</label>
+                        {{ form.activo }}
+                        {{ form.activo.errors }}
+                    </div>
+                </div>
+                <div class="d-flex justify-content-end mt-4">
+                    <button class="btn btn-outline-success me-2" type="submit">Registrar</button>
+                    <a class="btn btn-outline-warning" href="{% url 'core:medicine_list' %}">Cancelar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+</div>
+</body>
+{% endblock %}

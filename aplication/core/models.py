@@ -301,6 +301,8 @@ class Medicamento(models.Model):
     cantidad = models.PositiveIntegerField(verbose_name="Stock")
     # Precio del medicamento
     precio = models.DecimalField(max_digits=10, decimal_places=2, verbose_name="Precio")
+    # Imagen del medicamento
+    imagen = models.ImageField(upload_to='medicamentos/', verbose_name="Imagen del Medicamento", null=True, blank=True)
     # Campo que indica si el medicamento es genérico o comercial
     comercial = models.BooleanField(default=True,
         verbose_name="Comercial"
@@ -317,6 +319,11 @@ class Medicamento(models.Model):
         # Nombre singular y plural del modelo en la interfaz administrativa
         verbose_name = "Medicamento"
         verbose_name_plural = "Medicamentos"
+        
+    def get_imagen(self):
+        if self.imagen:
+            return self.imagen.url
+        return '/path/to/default/image.jpg'
 
 # Modelo que representa los diagnósticos médicos.
 # Incluye un código único, descripción y un campo adicional para información relevante.
