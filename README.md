@@ -33,7 +33,7 @@ El proyecto está organizado en varios módulos, cada uno con responsabilidades 
 
 1. Clona el repositorio:
     ```sh
-    git clone https://github.com/tu_usuario/app_doctor.git
+    git clone https://github.com/GabrielHasqui/proy_doctor.git
     ```
 2. Navega al directorio del proyecto:
     ```sh
